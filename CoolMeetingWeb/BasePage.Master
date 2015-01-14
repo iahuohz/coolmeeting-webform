@@ -1,0 +1,114 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="BasePage.master.cs" Inherits="ETC.EEG.CoolMeeting.BasePage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>CoolMeeting会议管理系统</title>
+    <link rel="stylesheet" href="styles/common.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="page-header">
+        <div class="header-banner">
+            <asp:Image ID="imgHeader" runat="server" ImageUrl="~/images/header.png" AlternateText="Cool Meeting Logo" />
+        </div>
+        <div class="header-title">
+            欢迎访问Cool-Meeting会议管理系统
+        </div>
+        <div class="header-quicklink">
+            <div id="divSigned" runat="server">
+                欢迎您，<strong><asp:LoginName ID="loginName" runat="server" />
+                </strong>
+                <asp:HyperLink ID="linkChangePwd" runat="server" NavigateUrl="~/ChangePassword.aspx" Text="修改密码" />
+            </div>
+            <div id="divUnSigned" runat="server">
+                <asp:HyperLink ID="linkLogin" runat="server" NavigateUrl="~/Login.aspx" Text="登录" />
+                <asp:HyperLink ID="linkRegister" runat="server" NavigateUrl="~/Register.aspx" Text="注册" />
+            </div>
+        </div>
+    </div>
+    <div class="page-body">
+        <div class="page-sidebar">
+            <div id="divEmployeeMenu" runat="server">
+                <div class="sidebar-menugroup">
+                    <div class="sidebar-grouptitle">个人中心</div>
+                    <ul class="sidebar-menu">
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/MemberPages/Notifications.aspx" Text="最新通知" />
+                        </li>
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/MemberPages/MyReservations.aspx" Text="我的预定" />
+                        </li>
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/MemberPages/MyMeetings.aspx" Text="我的会议" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-menugroup">
+                    <div class="sidebar-grouptitle">用户管理</div>
+                    <ul class="sidebar-menu">
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink12" runat="server" NavigateUrl="~/ChangePassword.aspx" Text="修改密码" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-menugroup">
+                    <div class="sidebar-grouptitle">会议预定</div>
+                    <ul class="sidebar-menu">
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink9" runat="server" NavigateUrl="~/MemberPages/MeetingRooms.aspx" Text="查看会议室" />
+                        </li>
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink10" runat="server" NavigateUrl="~/MemberPages/Reservation.aspx" Text="预定会议" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="divAdminMenu" runat="server">
+                <div class="sidebar-menugroup">
+                    <div class="sidebar-grouptitle">管理员任务</div>
+                    <ul class="sidebar-menu">
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/AdminPages/Departments.aspx" Text="部门管理" />
+                        </li>
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/AdminPages/ApproveAccounts.aspx" Text="注册审批" />
+                        </li>
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/AdminPages/SearchEmployees.aspx" Text="搜索员工" />
+                        </li>
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink13" runat="server" NavigateUrl="~/AdminPages/AddRoom.aspx" Text="添加会议室" />
+                        </li>
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink8" runat="server" NavigateUrl="~/AdminPages/AdminRooms.aspx" Text="管理会议室" />
+                        </li>
+                        <li class="sidebar-menuitem">
+                            <asp:HyperLink ID="HyperLink11" runat="server" NavigateUrl="~/AdminPages/SearchReservations.aspx" Text="搜索会议" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page-content">
+            <div class="content-nav">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderNav" runat="server">
+                    首页
+                </asp:ContentPlaceHolder>
+            </div>
+            <form id="form1" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+                    欢迎访问Cool-Meeting会议管理系统
+                </asp:ContentPlaceHolder>
+            </form>
+        </div>
+    </div>
+    <div class="page-footer">
+        <hr />
+        更多问题，欢迎联系<a href="mailto:webmaster@eeg.com">管理员</a>
+        <asp:Image ID="imgFooter" runat="server" ImageUrl="~/images/footer.png" AlternateText="EEG Logo" />
+    </div>
+</body>
+</html>
